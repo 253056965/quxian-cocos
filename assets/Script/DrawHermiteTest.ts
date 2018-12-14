@@ -9,6 +9,8 @@ export default class DrawHermiteTest extends cc.Component {
     @property(cc.Prefab)
     myPoint: cc.Prefab = null;
     private graphics: cc.Graphics = null;
+    @property(cc.Node)
+    gameNode:cc.Node=null;
     // LIFE-CYCLE CALLBACKS:
     private array: Array<cc.Node> = new Array();
     private index = -1
@@ -59,6 +61,7 @@ export default class DrawHermiteTest extends cc.Component {
         for (let i = 0; i < 3; i++) {
             let node = cc.instantiate(this.myPoint);
             node.getComponent(MyPoint).index = i;
+            node.getComponent(MyPoint).gameNode=this.gameNode;
             node.setPosition(cc.v2(30, 20 * (i + 1)));
             this.node.addChild(node)
             this.array.push(node);
@@ -84,6 +87,7 @@ export default class DrawHermiteTest extends cc.Component {
     public addMyPointsClick() {
         let node = cc.instantiate(this.myPoint);
         node.setPosition(cc.v2(300, 500));
+        node.getComponent(MyPoint).gameNode = this.gameNode;
         this.node.addChild(node)
         this.array.push(node);
         this.array.forEach((n,index) => {

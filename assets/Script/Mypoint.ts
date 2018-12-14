@@ -18,9 +18,18 @@ export default class MyPoint extends cc.Component {
     postion_label: cc.Label = null;
     @property(cc.Label)
     index_label: cc.Label = null;
-
     @property(cc.Node)
     hitNode: cc.Node = null;
+
+
+    private _gameNode: cc.Node = null;
+    public get gameNode(): cc.Node {
+        return this._gameNode;
+    }
+    public set gameNode(value: cc.Node) {
+        this._gameNode = value;
+    }
+
 
     private _x: number = 0;
     public get x(): number {
@@ -46,8 +55,13 @@ export default class MyPoint extends cc.Component {
 
     }
     update(dt) {
-        this._x = this.node.getPosition().x;
-        this._y = this.node.getPosition().y;
+        
+        
+        let wrold= this.node.convertToWorldSpaceAR(cc.v2(0, 0));
+    
+        let tempP = this.gameNode == null ? this.node.getPosition() : this.gameNode.convertToNodeSpaceAR(wrold)
+        this._x = tempP.x;
+        this._y = tempP.y;
         this.postion_label.string = `(${this._x}, ${this._y})`
         this.index_label.string = `${this._index}`
     }

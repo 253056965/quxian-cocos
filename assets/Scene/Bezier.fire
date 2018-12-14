@@ -41,8 +41,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.13550866415647794,
-      "y": 0.13550866415647794,
+      "x": 0.30598290598290595,
+      "y": 0.30598290598290595,
       "z": 1
     },
     "_quat": {
@@ -854,7 +854,7 @@
     "target": {
       "__id__": 11
     },
-    "component": "DrawTest",
+    "component": "DrawBezierTest",
     "handler": "addMyPointsClick",
     "customEventData": ""
   },
@@ -1114,7 +1114,7 @@
     "target": {
       "__id__": 11
     },
-    "component": "DrawTest",
+    "component": "DrawBezierTest",
     "handler": "delMyPointsClick",
     "customEventData": ""
   },
