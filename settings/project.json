@@ -13,7 +13,15 @@
   ],
   "design-resolution-height": 640,
   "design-resolution-width": 960,
-  "excluded-modules": [],
+  "excluded-modules": [
+    "Geom Utils",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle",
+    "SafeArea"
+  ],
   "fit-height": true,
   "fit-width": false,
   "group-list": [
@@ -26,5 +34,8 @@
   },
   "use-customize-simulator": false,
   "use-project-simulator-setting": false,
-  "start-scene": "current"
+  "start-scene": "current",
+  "migrate-history": [
+    "cloud-function"
+  ]
 }
